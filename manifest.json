@@ -1,0 +1,54 @@
+{
+    "name": "Cumulus",
+    "id": "cumulusclips",
+    "packaging_format": 1,
+    "requirements": {
+        "yunohost": ">> 2.3.15"
+    },
+    "description": {
+        "fr": "Logiciel libre de streaming"
+    },
+    "url": "http://cumulusclips.org",
+    "license": "AGPLv3",
+    "maintainer": {
+        "name": "frju365",
+        "email": "win10@tutanota.com"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php5-fpm"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for Cumulus",
+                    "fr": "Choisissez un domaine pour Cumulus"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for Cumulus",
+                    "fr": "Choisissez un chemin pour Cumulus"
+                },
+                "example": "/cumulusclips",
+                "default": "/cumulusclips"
+            },
+            {
+                "name": "is_public",
+                "ask": {
+                    "en": "Is it a public Cumulus site ?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "choices": ["Yes", "No"],
+                "default": "Yes"
+            }
+        ]
+    }
+}

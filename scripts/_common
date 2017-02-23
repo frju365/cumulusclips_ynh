@@ -1,0 +1,13 @@
+CUMULUSCLIPS_SOURCE_URL="http://cumulusclips.org/cumulusclips.zip"
+
+extract_source() {
+  local DESTDIR=$1
+    
+  # retrieve and extract CumulusClips Zip File
+  rc_tarball="${DESTDIR}/cumulusclips.zip"
+  sudo wget -q -O "$rc_tarball" "$CUMULUSCLIPS_SOURCE_URL" \
+    || ynh_die "Unable to download source tarball"
+  sudo unzip "$rc_tarball" "$DESTDIR" \
+    || ynh_die "Unable to extract source tarball"
+  sudo rm "$rc_tarball"
+}
